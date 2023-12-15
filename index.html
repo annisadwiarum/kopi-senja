@@ -5,15 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Senja</title>
 
-    <!-- font -->
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- my style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">kopi<span>senja.</span></a>
+
+    <div class="navbar-nav">
+      <a href="#">Home</a>
+      <a href="#about">Tentang kami</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="" id="search"><li data-feather="search"></li></a>
+      <a href="" id="shopping-cart"><li data-feather="shopping-cart"></li></a>
+      <a href="" id="humberger-menu"><li data-feather="menu"></li></a>
+    </div>
+  </nav>
+
+  <!-- navbar end -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- my javascript -->
+    <script src="js/script.js"></script>
     
 </body>
 </html>
