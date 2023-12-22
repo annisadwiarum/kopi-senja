@@ -18,7 +18,7 @@ document.querySelector('#search-button').onclick = (e) => {
     searchBox.focus();
 };
 
-//klik sembarang bisa mengclose
+//klik sembarang untuk mengclose
 const hamburger = document.querySelector('#hamburger-menu');
 const sb = document.querySelector('#search-button');
 
