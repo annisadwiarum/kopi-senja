@@ -94,6 +94,13 @@ body {
     height: 5rem;
     display: flex;
     align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+}
+
+.navbar .search-form.active {
+    transform: scaleY(1);
 }
 
 .navbar .search-form input {
@@ -379,6 +386,11 @@ footer .credit a {
 
     .navbar .navbar-nav a:hover::after {
         transform: scaleX(0.2);
+    }
+
+    .navbar .search-form {
+        width: 90%;
+        right: 2rem;
     }
 
     .about .row {
