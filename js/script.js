@@ -28,12 +28,12 @@ document.querySelector('#shopping-cart-button').onclick = (e) => {
 }
 
 //klik sembarang untuk mengclose
-const hamburger = document.querySelector('#hamburger-menu');
+const hb = document.querySelector('#hamburger-menu');
 const sb = document.querySelector('#search-button');
 const sc = document.querySelector('#shopping-cart-button');
 
 document.addEventListener('click', function (e) {
-    if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+    if (!hb.contains(e.target) && !navbarNav.contains(e.target)) {
         navbarNav.classList.remove('active');
     }
     if (!sb.contains(e.target) && !searchForm.contains(e.target)) {

@@ -458,6 +458,63 @@ footer .credit a {
     font-weight: 700;
 }
 
+/* modal box */
+/* detail item */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal .modal-container {
+    position: relative;
+    background-color: #fefefe;
+    color: var(--background);
+    margin: 15% auto;
+    padding: 1rem;
+    border: 1px solid #666;
+    width: 80%;
+}
+
+.modal .modal-container .close-icon {
+    position: absolute;
+    right: 1rem;
+}
+
+.modal .modal-content {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal .modal-content img {
+    height: 14rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal .modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.2rem;
+}
+
+.modal .modal-content a {
+    display: flex;
+    gap: 1rem;
+    width: 12rem;
+    background-color: var(--primary);
+    color: #fff;
+    margin-top: 1rem;
+    padding: 1rem 1.6rem;
+}
+
 /* media queries */
 
 /* laptop */
