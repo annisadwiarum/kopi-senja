@@ -11,11 +11,38 @@ document.querySelector('#hamburger-menu').onclick = (e) => {
 const searchForm = document.querySelector('.search-form');
 const searchBox = document.querySelector('#search-box');
 
+//modal box
+const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailButtons = document.querySelectorAll('.item-detail-button');
+
+//ketika icon eye di click, maka modal box yang berisi item detail akan muncul
+itemDetailButtons.forEach((btn) => {
+    btn.onclick = (e) => {
+        itemDetailModal.style.display = 'flex';
+        e.preventDefault();
+    };
+});
+
+// klik tombol close modal
+document.querySelector('.modal .close-icon').onclick = (e) => {
+    itemDetailModal.style.display = 'none';
+    e.preventDefault();
+
+}
+
 //ketika icons search di klik
 document.querySelector('#search-button').onclick = (e) => {
     searchForm.classList.toggle('active');
     e.preventDefault();
     searchBox.focus();
+};
+
+// klik di luar modal untuk mengclose modal 
+const modal = document.querySelector('#item-detail-modal');
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
 };
 
 // toggle tuk shopping cart 
