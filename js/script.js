@@ -15,7 +15,7 @@ const searchBox = document.querySelector('#search-box');
 const itemDetailModal = document.querySelector('#item-detail-modal');
 const itemDetailButtons = document.querySelectorAll('.item-detail-button');
 
-//ketika icon eye di click, maka modal box yang berisi item detail akan muncul
+//ketika icon eye di click, maka modal box yang berisi item detail akan muncul. ini pake foreach karena buttonnya ada banyak.
 itemDetailButtons.forEach((btn) => {
     btn.onclick = (e) => {
         itemDetailModal.style.display = 'flex';
@@ -38,10 +38,9 @@ document.querySelector('#search-button').onclick = (e) => {
 };
 
 // klik di luar modal untuk mengclose modal 
-const modal = document.querySelector('#item-detail-modal');
 window.onclick = (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
+    if (e.target === itemDetailModal) {
+        itemDetailModal.style.display = 'none';
     }
 };
 

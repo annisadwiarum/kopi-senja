@@ -193,7 +193,7 @@ body {
 
 .hero .content {
     padding: 1.4rem 7%;
-    max-width: 60rem;
+    /* max-width: 60rem; */
 }
 
 .hero .content h1 {
