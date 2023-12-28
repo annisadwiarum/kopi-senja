@@ -174,14 +174,15 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url('../img/hcof.jpg');
+    background-image: url('../img/header-coffee.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    mask-image: linear-gradient(rgb(155, 124, 86) 40%, rgba(0, 0, 0, 0));
 }
 
-.hero::after {
+/* .hero::after {
     content: '';
     display: block;
     position: absolute;
@@ -189,11 +190,16 @@ body {
     height: 30%;
     bottom: 0;
     background: linear-gradient(0deg, rgb(52, 32, 7) 5%, rgba(164, 126, 94, 0));
-}
+} */
 
 .hero .content {
     padding: 1.4rem 7%;
     /* max-width: 60rem; */
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 23%;
+
 }
 
 .hero .content h1 {
@@ -250,6 +256,10 @@ body {
 .about .row .about-img img{
     width: 100%;
     border-radius: 0.5rem;
+    mask-image: url('../img/coffeee.svg');
+    mask-size: 95%;
+    mask-repeat: no-repeat;
+    mask-position: top;
 }
 
 .about .row .content {
@@ -586,7 +596,6 @@ footer .credit a {
     }
 
     .about .row .about-img img {
-        height: 24rem;
         object-fit: cover;
         object-position: center;
     }
