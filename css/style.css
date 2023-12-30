@@ -119,6 +119,21 @@ body {
 }
 
 /* shopping cart */
+#shopping-cart-button {
+    position: relative;
+}
+
+#shopping-cart-button .quantity-badge {
+    display: inline-block;
+    padding: 1px 5px;
+    background-color: red;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    right: -10px;
+}
+
 .navbar .shopping-cart {
     position: absolute;
     top: 100%;
@@ -146,27 +161,26 @@ body {
 }
 
 .navbar .shopping-cart img {
-    height: 6rem;
+    height: 4rem;
     border-radius: 50%;
 }
 
 .navbar .shopping-cart h3 {
-    font-size: 1.6rem;
-    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
 }
 
 .navbar .shopping-cart .price-item {
     font-size: 1.2rem;
 }
 
-.navbar .shopping-cart .remove-item {
-    position: absolute;
-    right: 1rem;
+.shopping-cart .cart-item #add, .shopping-cart .cart-item #remove {
+    display: inline;
+    padding: 2px 5px;
     cursor: pointer;
-}
-
-.navbar .shopping-cart .remove-item:hover {
-    color: var(--primary);
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 /* hero section */
