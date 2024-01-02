@@ -39,8 +39,9 @@
 
     <div class="navbar-extra">
       <a href="#" id="search-button"><i data-feather="search"></i></a>
-      <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i>
-      <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+      <a href="#" id="shopping-cart-button">
+        <i data-feather="shopping-cart"></i>
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
       </a>
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
@@ -54,7 +55,7 @@
 
     <!-- shopping cart start -->
     <div class="shopping-cart">
-      <template x-for="(item, index) in $store.cart.items" x-key="index">
+      <template x-for="(item, index) in $store.cart.items" x-keys="index">
       <div class="cart-item">
         <img :src="`img/products/${item.img}`" :alt="item.name">
         <div class="detail-item">
@@ -134,7 +135,7 @@
   <!-- menu section end -->
 
   <!-- product section start -->
-  <section class="products" id="product" x-data="productss">
+  <section class="products" id="product" x-data="products">
     <h2>Produk Terbaik Kami</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores doloremque non hic porro fugiat quis?</p>
 

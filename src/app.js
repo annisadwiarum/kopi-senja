@@ -1,5 +1,5 @@
 document.addEventListener('alpine:init', () => {
-    Alpine.data('productss', () => ({
+    Alpine.data('products', () => ({
         items: [
             { id: 1, name: 'Coffee Beans 1', img: 'product-01.jpg', price: 30000 },
             { id: 2, name: 'Coffee Beans 2', img: 'product-01.jpg', price: 55000 },
@@ -14,20 +14,22 @@ document.addEventListener('alpine:init', () => {
         total: 0,
         quantity: 0,
         add(newItem) {
-            //mengecek apakah ada barang di dalam cart
-            const cartItem = this.items.find((item) => item.id === newItem.id);
+            // cek apakah ada barang yang sama di cart atau tidak
+            const carItem = this.items.find((item) => item.id === newItem.id);
 
-            // jika belum ada, alias kosong
-            if (!cartItem) {
-                this.items.push({...newItem, quantity: 1, total: newItem.price});
+            // kalau barang belum ada / kosong di cart
+            if (!carItem) {
+                this.items.push({ ...newItem, quantity: 1, total: newItem.price });
+                this.quantity++;
+                this.total += newItem.price;
             } else {
-                // mengecek jika barang sudah ada, berangnya beda atau sama
-                this.item = this.items.map((item) => {
-                    // jika barang beda
+                // kalau barang sudah ada di cart. cek apakah barng beda atau sama
+                this.items = this.items.map((item) => {
+                    // barang beda
                     if (item.id !== newItem.id) {
                         return item;
                     } else {
-                        // jika barang ternyata sama, cukup tambah quantity dan totalnya
+                        // ternyata barang sama, maka tinggal tambah quantity dan totalkan harga
                         item.quantity++;
                         item.total = item.price * item.quantity;
                         this.quantity++;
@@ -36,6 +38,7 @@ document.addEventListener('alpine:init', () => {
                     }
                 });
             }
+            console.log(this.quantity)
         },
     });
 });
