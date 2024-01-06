@@ -1,3 +1,12 @@
+// konversi ke rupiah
+const rupiah = (number) => {
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0,
+    }).format(number);
+};
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('products', () => ({
         items: [
@@ -8,6 +17,7 @@ document.addEventListener('alpine:init', () => {
             { id: 5, name: 'Coffee Beans 5', img: 'product-01.jpg', price: 25000 },
         ],
     }));
+
 
     Alpine.store('cart', {
         items: [],
@@ -93,8 +103,6 @@ checkoutButton.addEventListener('click', async function (e) {
     const formData = new FormData(form);
     const data = new URLSearchParams(formData);
     const objectData = Object.fromEntries(data);
-    // const message = formatMessage(objectData);
-    // window.open('http://wa.me/6285835300072?text=' + encodeURIComponent(message));
 
     // request transsaction token dengan ajax / fetch
     try {
@@ -104,9 +112,9 @@ checkoutButton.addEventListener('click', async function (e) {
         });
         const token = await response.text();
         console.log(token);
-        // window.snap.pay('TRANSACTION_TOKEN_HERE');
-    } catch (error) {
-        console.log(error.message);
+        // window.snap.pay(token);
+    } catch (err) {
+        console.log(err.message);
     }
     
 });
@@ -123,11 +131,3 @@ TOTAL: ${rupiah(object.total)}
 Syukran katsiran :)`;
 };
 
-// konversi ke rupiah
-const rupiah = (number) => {
-    return new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0,
-    }).format(number);
-};
