@@ -103,6 +103,7 @@ checkoutButton.addEventListener('click', async function (e) {
     const formData = new FormData(form);
     const data = new URLSearchParams(formData);
     const objectData = Object.fromEntries(data);
+    console.log(objectData);
 
     // request transsaction token dengan ajax / fetch
     try {
@@ -111,8 +112,8 @@ checkoutButton.addEventListener('click', async function (e) {
             body: data,
         });
         const token = await response.text();
-        console.log(token);
-        // window.snap.pay(token);
+        // console.log(token);
+        window.snap.pay(token);
     } catch (err) {
         console.log(err.message);
     }
