@@ -105,6 +105,9 @@ checkoutButton.addEventListener('click', async function (e) {
     const objectData = Object.fromEntries(data);
     console.log(objectData);
 
+    // const message = formatMessage(objectData)
+    // window.open('http://wa.me/6285835300072?text=' + encodeURIComponent(message));
+
     // request transsaction token dengan ajax / fetch
     try {
         const response = await fetch('php/placeOrder.php', {
@@ -112,7 +115,7 @@ checkoutButton.addEventListener('click', async function (e) {
             body: data,
         });
         const token = await response.text();
-        // console.log(token);
+        console.log(token);
         window.snap.pay(token);
     } catch (err) {
         console.log(err.message);
