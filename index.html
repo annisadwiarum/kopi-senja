@@ -167,7 +167,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores doloremque non hic porro fugiat quis?</p>
 
     <div class="row">
-      <template x-for="(item, index) in items" x-key="index">
+      <template x-for="(item, index) in items" :key="index">
         <div class="product-card">
           <div class="product-icons">
             <a href="#" @click.prevent="$store.cart.add(item)">
